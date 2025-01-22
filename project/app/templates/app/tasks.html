@@ -6,6 +6,7 @@
       <th scope="col">Name of Task</th>
       <th scope="col">Description</th>
       <th scope="col">Deadline</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -14,8 +15,12 @@
     <tr>
       <th scope="row">{{ forloop.counter }}</th>
       <td>{{ task.name }}</td>
-      <td>{{ task.description }}</td>
+      <td>{{ task.desc }}</td>
       <td>{{ task.deadline }}</td>
+      <td class="d-flex"> 
+        <button class="btn btn-primary m">update</button>
+        <button class="btn btn-danger">delete</button>
+      </td>
     </tr>
       {% endfor %} 
     {% else %}
