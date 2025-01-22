@@ -30,8 +30,8 @@ def update_task(request,pk):
     else:
         form = TaskForm()
     context = {
-            'form': form,
-             'task': task
+            "form": form,
+            "task":task
         }
     return render(request,'app/update_task.html',context)
 
