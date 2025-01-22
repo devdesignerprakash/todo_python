@@ -21,14 +21,14 @@ def home_view(request):
     return render(request, 'app/home.html', context)
 
 def update_task(request,pk):
-    task = get_object_or_404(TaskManager, pk=pk)
+    task = get_object_or_404(TaskManager, id=pk)
     if request.method=="POST":
         form = TaskForm(request.POST,instance=task)
         if form.is_valid():
             form.save()
             return redirect('home') 
     else:
-        form = TaskForm()
+        form = TaskForm(instance=task)
     context = {
             "form": form,
             "task":task
