@@ -1,0 +1,27 @@
+<h2>Task List</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">S.No.</th>
+      <th scope="col">Name of Task</th>
+      <th scope="col">Description</th>
+      <th scope="col">Deadline</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if tasks|length > 0 %} 
+      {% for task in tasks %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ task.name }}</td>
+      <td>{{ task.description }}</td>
+      <td>{{ task.deadline }}</td>
+    </tr>
+      {% endfor %} 
+    {% else %}
+    <tr>
+      <td colspan="4">No tasks available.</td>
+    </tr>
+    {% endif %}
+  </tbody>
+</table>

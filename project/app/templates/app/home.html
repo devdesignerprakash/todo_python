@@ -1,26 +1,18 @@
-{% extends "app/base.html" %}
-{%block title %}Home{%endblock title%}
+{% extends "app/base.html" %} {%block title %}Home{%endblock title%} 
 {%block content%}
 <div class="container mt-5">
-    <h3 class="text-center mt-2">Task Manager</h3>
-    <div class="row mt-2">
-        <!-- Form Section -->
-        <div class="col-md-6">
-            <h2>Add New Task</h2>
-            <form id="taskForm" action= "" method="POST">
-                {% csrf_token %}
-                    {{form}}
-                <button type="submit" class="btn btn-primary mt-2">Add Task</button>
-            </form>
-        </div>
-        <!-- Task List Section -->
-        <div class="col-md-6">
-            <h2>Task List</h2>
-            <ul class="list-group" id="taskList">
-                <!-- Task items will be added here -->
-            </ul>
-        </div>
+  <h3 class="text-center mt-2">Task Manager</h3>
+  <div class="row mt-2">
+    <!-- Form Section -->
+    <div class="col-md-6">
+      <h2>Add New Task</h2>
+      <form id="taskForm" action="" method="POST">
+        {% csrf_token %} {{form}}
+        <button type="submit" class="btn btn-primary mt-2">Add Task</button>
+      </form>
     </div>
+    <!-- Task List Section -->
+    <div class="col-md-6">{% include "app/tasks.html" with tasks=tasks %}</div>
+  </div>
 </div>
 {%endblock content%}
-

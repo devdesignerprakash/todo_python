@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import TaskForm
+from .models import*
 
 def home_view(request):
     if request.method == "POST":
@@ -9,9 +10,11 @@ def home_view(request):
             form = TaskForm()
     else:
         form = TaskForm()
+    tasks=TaskManager.objects.all()
 
     context = {
-        "form": form 
+        "form": form,
+        "tasks":tasks
     }
 
     return render(request, 'app/home.html', context)
