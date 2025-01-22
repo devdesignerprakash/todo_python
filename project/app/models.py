@@ -9,5 +9,5 @@ class TaskManager(models.Model):
 
 
     def __stir__(self):
-        return self.names
+        return self.name
 # Create your models here.

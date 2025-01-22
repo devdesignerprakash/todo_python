@@ -4,7 +4,7 @@
   <h3 class="text-center mt-2">Task Manager</h3>
   <div class="row mt-2">
     <!-- Form Section -->
-    <div class="col-md-6">
+    <div class="col-md-4">
       <h2>Add New Task</h2>
       <form id="taskForm" action="" method="POST">
         {% csrf_token %} {{form}}
@@ -12,7 +12,7 @@
       </form>
     </div>
     <!-- Task List Section -->
-    <div class="col-md-6">{% include "app/tasks.html" with tasks=tasks %}</div>
+    <div class="col-md-8">{% include "app/tasks.html" with tasks=tasks %}</div>
   </div>
 </div>
 {%endblock content%}

@@ -1,0 +1,15 @@
+{% extends "app/base.html" %} {%block title %}Home{%endblock title%} 
+{%block content%}
+<div class="container mt-5">
+  <div class="row mt-2">
+    <!-- Form Section -->
+    <div class="col-md-4">
+      <h2>update Task</h2>
+      <form id="taskForm" action="" method="POST" >
+        {% csrf_token %} {{form}}
+        <button type="submit" class="btn btn-primary mt-2">update Task</button>
+      </form>
+    </div>
+  </div>
+</div>
+{%endblock content%}
